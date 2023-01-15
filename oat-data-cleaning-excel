@@ -1,0 +1,31 @@
+Method used in Excel for cleaning the data derived from the Google Form
+
+The example dataset was produced from an OAT campaign LanguageDAO ran 
+
+
+1) Sorted Language column alphabetically
+
+2) Ran de-duplication method on Excel, de-duplifying by Discord handle
+
+3) Used find and replace method to swap all instances of “‰∏≠Êñá” with Chinese
+3a) SOURCE: https://github.com/microsoft/vscode-mssql/issues/1059
+
+4) Deleted other instances of other encoding issues 28. Possibility of introducing 
+systematic bias, if all the characters represent a particular language and these 
+entries were removed. In this case, 30 is minor relative to an N over 2000
+
+5) Used find and replace method to swap all instances of “Mandarin” with “Chinese”
+
+6) By hand, deleted all rows with no answer for Language column, answers “NA” various 
+versions of “LanguageDAO,” incorrect inputs of Discord name or otherwise, Twitter links, etc
+
+7) By hand, made commas the separator between languages, versus alternatives like the & symbol. 
+
+8) By hand, deleted fringe entries which couldn’t be identified as other languages. Represented 
+a small amount. 
+
+9) By hand, standardized entries, such as changing “britain” to “english” or “Bahasa Indonesia” 
+to “indonesian”
+
+10) By hand, deleted entries that reported “Koe” as their language because after checking 
+approximately a third on Twitter the accounts appeared to all be different bots 
