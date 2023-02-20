@@ -1,0 +1,24 @@
+Galaxy Campaign Language Analysis Methodology
+
+Data Cleaning
+
+Excel
+Sorted Language column alphabetically
+Ran de-duplication method on Excel, de-duplifying by Discord handle
+Used find and replace method to swap all instances of “‰∏≠Êñá” with Chinese
+SOURCE: https://github.com/microsoft/vscode-mssql/issues/1059
+Deleted other instances of other encoding issues 28. Possibility of introducing systematic bias, if all the characters represent a particular language and these entries were removed. In this case, 30 is minor relative to an N over 2000
+Used find and replace method to swap all instances of “Mandarin” with “Chinese”
+By hand, deleted all rows with no answer for Language column, answers “NA” various versions of “LanguageDAO,” incorrect inputs of Discord name or otherwise, Twitter links, etc
+By hand, made commas the separator between languages, versus alternatives like the & symbol. 
+By hand, deleted fringe entries which couldn’t be identified as other languages. Represented a small amount, 
+By hand, standardized entries, such as changing “britain” to “english” or “Bahasa Indonesia” to “indonesian”
+By hand, deleted 23 entries that reported “Koe” as their language because after checking approximately a third on Twitter the accounts appeared to all be different bots 
+
+Final N = 2179 after Excel cleaning 
+
+
+
+Other Notes:
+In future Galaxy forms we should ask submitters to provide email address, so we can build out a massive dataset of people in web3, their contact info, what language they speak, etc. The dataset is valuable, and on a form-by-form basis, collecting emails might represent a value proposition for clients. 
+Need to find a more automated way of cleaning fringe cases, versus cleaning by hand
